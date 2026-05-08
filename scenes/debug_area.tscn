@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://b0qlimox6v2vo"]
 
 [ext_resource type="Script" uid="uid://c0ih232kf36jh" path="res://scenes/debug_area.gd" id="1_btj2n"]
-[ext_resource type="Texture2D" uid="uid://fvuxcyo53ylh" path="res://Tiles/GandalfHardcore City Tiles/GandalfHardcore city tiles 32x32.png" id="2_ykyym"]
-[ext_resource type="Texture2D" uid="uid://eg1m7s0tlriv" path="res://Tiles/GandalfHardcore City Tiles/Building Tiles 32x32.png" id="3_x61vy"]
-[ext_resource type="Texture2D" uid="uid://bfbq26ikxg2dk" path="res://Tiles/GandalfHardcore City Tiles/GandalfHardcore city tiles slope.png" id="4_o6cut"]
+[ext_resource type="Texture2D" uid="uid://fvuxcyo53ylh" path="res://GraphicsAssets/Tiles/GandalfHardcore City Tiles/GandalfHardcore city tiles 32x32.png" id="2_ykyym"]
+[ext_resource type="Texture2D" uid="uid://eg1m7s0tlriv" path="res://GraphicsAssets/Tiles/GandalfHardcore City Tiles/Building Tiles 32x32.png" id="3_x61vy"]
+[ext_resource type="Texture2D" uid="uid://bfbq26ikxg2dk" path="res://GraphicsAssets/Tiles/GandalfHardcore City Tiles/GandalfHardcore city tiles slope.png" id="4_o6cut"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ul6x0"]
 resource_name = "terreno"

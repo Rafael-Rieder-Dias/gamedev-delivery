@@ -9,6 +9,7 @@
 script = ExtResource("1_mk4g1")
 
 [node name="MusicaDeFundo" type="AudioStreamPlayer" parent="." unique_id=274102158]
+bus = &"BGM"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=432657326]
 
@@ -39,6 +40,7 @@ offset_bottom = 436.0
 text = "Como Jogar"
 
 [node name="Painel" type="Panel" parent="CanvasLayer/ComoJogar" unique_id=841876681]
+visible = false
 layout_mode = 0
 offset_left = -401.0
 offset_top = -325.0

@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://8ct6f1nuvokd"]
+
+[ext_resource type="Script" uid="uid://bpcgqtgtbxr83" path="res://scenes/inimigo_estatico.gd" id="1_ay7hp"]
+[ext_resource type="Texture2D" uid="uid://c5ogyg54aqj5x" path="res://GraphicsAssets/SpriteWork/Inimigo/placeholder-estatico-ataque.png" id="2_u3xle"]
+[ext_resource type="Texture2D" uid="uid://u5ag38h1ahas" path="res://GraphicsAssets/SpriteWork/Inimigo/placeholder-estatico.png" id="3_glxt6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwxwc"]
+atlas = ExtResource("2_u3xle")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwky7"]
+atlas = ExtResource("2_u3xle")
+region = Rect2(35, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7w5q"]
+atlas = ExtResource("2_u3xle")
+region = Rect2(70, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gujw0"]
+atlas = ExtResource("3_glxt6")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4ouh"]
+atlas = ExtResource("3_glxt6")
+region = Rect2(35, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lba8q"]
+atlas = ExtResource("3_glxt6")
+region = Rect2(70, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0m37"]
+atlas = ExtResource("3_glxt6")
+region = Rect2(105, 0, 35, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4h0e1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwxwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwky7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7w5q")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gujw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4ouh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lba8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0m37")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[node name="inimigoEstatico" type="CharacterBody2D" unique_id=1256483157]
+script = ExtResource("1_ay7hp")
+
+[node name="iE_Sprites" type="AnimatedSprite2D" parent="." unique_id=516015678]
+position = Vector2(17, 15)
+sprite_frames = SubResource("SpriteFrames_4h0e1")
+animation = &"idle"
+frame = 3
+frame_progress = 1.0
+
+[node name="iE_SFX" type="AudioStreamPlayer2D" parent="." unique_id=1644137773]

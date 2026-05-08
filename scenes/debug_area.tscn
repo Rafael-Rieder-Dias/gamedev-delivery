@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://b0qlimox6v2vo"]
 
 [ext_resource type="Script" uid="uid://c0ih232kf36jh" path="res://scenes/debug_area.gd" id="1_btj2n"]
-[ext_resource type="Texture2D" uid="uid://fvuxcyo53ylh" path="res://Tiles/GandalfHardcore City Tiles/GandalfHardcore city tiles 32x32.png" id="2_ykyym"]
-[ext_resource type="Texture2D" uid="uid://eg1m7s0tlriv" path="res://Tiles/GandalfHardcore City Tiles/Building Tiles 32x32.png" id="3_x61vy"]
-[ext_resource type="Texture2D" uid="uid://bfbq26ikxg2dk" path="res://Tiles/GandalfHardcore City Tiles/GandalfHardcore city tiles slope.png" id="4_o6cut"]
+[ext_resource type="Texture2D" uid="uid://fvuxcyo53ylh" path="res://GraphicsAssets/Tiles/GandalfHardcore City Tiles/GandalfHardcore city tiles 32x32.png" id="2_ykyym"]
+[ext_resource type="Texture2D" uid="uid://eg1m7s0tlriv" path="res://GraphicsAssets/Tiles/GandalfHardcore City Tiles/Building Tiles 32x32.png" id="3_x61vy"]
+[ext_resource type="Texture2D" uid="uid://bfbq26ikxg2dk" path="res://GraphicsAssets/Tiles/GandalfHardcore City Tiles/GandalfHardcore city tiles slope.png" id="4_o6cut"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ul6x0"]
 resource_name = "terreno"
@@ -948,6 +948,8 @@ texture = ExtResource("3_x61vy")
 16:23/0 = 0
 17:23/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_btj2n"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4fthx"]
 texture = ExtResource("4_o6cut")
 7:0/0 = 0
@@ -1078,6 +1080,7 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_f3wv5")
 sources/0 = SubResource("TileSetAtlasSource_ul6x0")
 sources/3 = SubResource("TileSetAtlasSource_4fthx")
+sources/2 = SubResource("TileSetScenesCollectionSource_btj2n")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gir6c"]
 size = Vector2(944, 195)

@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var player = get_tree().current_scene.get_node("Personagem")
 @onready var musica = get_tree().current_scene.get_node("MusicaDeFundo")
-@export var bgm_area1: AudioStream = preload("res://soundsAssets/sf3alex.mp3")
+@export var bgm_area1: AudioStream = preload("res://SoundsAssets/sf3alex.mp3.wav")
 
 @onready var area_camera: Camera2D = $CameraArea
 

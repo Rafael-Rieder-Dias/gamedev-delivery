@@ -2,21 +2,32 @@ extends Node2D
 
 @onready var musica = $MusicaDeFundo
 @onready var comecar = $CanvasLayer/ComecarJogo
-@onready var ajuda = $CanvasLayer/ComoJogar
 @onready var sair = $CanvasLayer/Sair
-@onready var painel = $CanvasLayer/ComoJogar/Painel
-@onready var painelfec = $CanvasLayer/ComoJogar/Painel/Fechar
+@onready var ajuda = $CanvasLayer/ComoJogar
+@onready var ajudapainel = $CanvasLayer/ComoJogar/Painel
+@onready var ajudapainelfec = $CanvasLayer/ComoJogar/Painel/Fechar
+@onready var creditos = $CanvasLayer/Creditos
+@onready var creditospainel = $CanvasLayer/Creditos/Painel
+@onready var creditospainelfec = $CanvasLayer/Creditos/Painel/Fechar
 
 func _ready() -> void:
-	painel.visible = false
+	ajudapainel.visible = false
+	creditospainel.visible = false
 	pass
 
 
 func _process(_delta) -> void:
-	if painel.visible and painelfec.button_pressed:
-		painel.visible = false
+	if creditospainel.visible and creditospainelfec.button_pressed:
+		creditospainel.visible = false
+		pass
+	if creditos.button_pressed:
+		creditospainel.visible = true
+		pass
+	if ajudapainel.visible and ajudapainelfec.button_pressed:
+		ajudapainel.visible = false
+		pass
 	if ajuda.button_pressed:
-		painel.visible = true
+		ajudapainel.visible = true
 		pass
 	if comecar.button_pressed:
 		get_tree().change_scene_to_file("res://scenes/teste.tscn")

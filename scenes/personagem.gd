@@ -36,8 +36,7 @@ enum State { #estados que o personagem pode estar, relevante para sprites
 	WALLGRAB,
 	SLIDE,
 	PARRY,
-	#FALL,
-	#HURT,
+	HURT,
 	#DEATH
 }
 
@@ -81,10 +80,10 @@ func _ready():
 
 func _physics_process(delta):
 	var input_direction := Input.get_axis("left", "right")
-	var impact_velocity_x := velocity.x
 
 	get_input()
 	update_state(input_direction, delta)
+	update_second(delta)
 	update_collision()
 
 	if turn_lock_time > 0:
@@ -106,10 +105,6 @@ func _physics_process(delta):
 		last_state[0] = state
 		
 	sfx.soundize(state, state_frames, delta)
-		
-		#PROVAVELMENTE MUDAR A LÓGICA DO THUD!!!
-	if (abs(impact_velocity_x) > 300) and is_on_wall() and is_on_floor():
-		sfx.secondize(Second.THUD) #MUDAR QUANDO THUD MUDAR
 
 
 func get_input():
@@ -158,6 +153,8 @@ func update_state(input_direction, delta):
 		parry_time_left = max(parry_time_left - delta, 0.0)
 		if parry_time_left > 0.0:
 			caixaprry.disabled = false
+			#if caixaprry: (se o parry acertar?)
+				#second = Second.PARRYHIT
 			return
 		caixaprry.disabled = true
 		state = last_state[1]
@@ -214,6 +211,18 @@ func update_state(input_direction, delta):
 	else:
 		state = State.WALK
 
+func update_second(_delta):
+	var impact_velocity_x := velocity.x
+	if (abs(impact_velocity_x) > 300) and is_on_wall() and is_on_floor():
+		sfx.secondize(Second.THUD) #MUDAR QUANDO THUD MUDAR
+	
+	#if true:
+		#sfx.secondize(Second.HURT)
+		
+	#if true:
+		#sfx.secondize(Second.PARRYHIT)
+		
+
 func update_movement(input_direction, delta):
 	var target_speed = walk_speed
 	if wants_run:
@@ -261,7 +270,7 @@ func update_movement(input_direction, delta):
 			0,
 			ground_friction * delta
 		)
-
+		
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
@@ -287,7 +296,7 @@ func update_face(_input_direction):
 		caixaagch.position.x = (2.0 * collision_flip_pivot_x) - caixaagch_base_pos.x
 		caixaprry.position.x = (2.0 * collision_flip_pivot_x) - caixaprry_base_pos.x
 
-func update_collision(): #FEITO POR IA ---- REVISAR	
+func update_collision():
 	if state == State.SLIDE:
 		caixape.disabled = true
 		caixaagch.disabled = false

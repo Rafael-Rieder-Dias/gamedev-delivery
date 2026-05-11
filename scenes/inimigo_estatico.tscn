@@ -66,14 +66,23 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ay7hp"]
+size = Vector2(20, 15)
+
 [node name="inimigoEstatico" type="CharacterBody2D" unique_id=1256483157]
 script = ExtResource("1_ay7hp")
 
 [node name="iE_Sprites" type="AnimatedSprite2D" parent="." unique_id=516015678]
 position = Vector2(17, 15)
 sprite_frames = SubResource("SpriteFrames_4h0e1")
-animation = &"idle"
-frame = 3
-frame_progress = 1.0
+animation = &"attack"
+
+[node name="iE_Colisao" type="CollisionShape2D" parent="." unique_id=1480869946]
+position = Vector2(17, 17.5)
+shape = SubResource("RectangleShape2D_ay7hp")
 
 [node name="iE_SFX" type="AudioStreamPlayer2D" parent="." unique_id=1644137773]
+
+[node name="iE_Visao" type="RayCast2D" parent="." unique_id=1830200086]
+position = Vector2(-4, 15)
+target_position = Vector2(-294, 0)

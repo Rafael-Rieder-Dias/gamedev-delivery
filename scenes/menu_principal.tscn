@@ -68,3 +68,39 @@ Donec a turpis arcu. Donec elementum eleifend nibh ac auctor. Cras bibendum matt
 
 Praesent egestas nisl commodo sem condimentum tristique et eu ligula. Donec fermentum porttitor justo, sed vehicula tortor consectetur nec. Fusce gravida ipsum in elit elementum, id eleifend massa molestie. Cras vel purus mauris. Integer vel sapien eleifend dolor aliquet sagittis. Vivamus sit amet iaculis enim. Quisque aliquam, nisi vel facilisis euismod, nibh ex molestie mi, ut dictum turpis erat eu velit. Aenean bibendum finibus est, ac euismod odio scelerisque non. Aliquam dapibus euismod dignissim. Proin felis felis, volutpat nec elit dictum, rutrum malesuada justo. Pellentesque lacus ante, interdum quis nunc nec, consectetur auctor nulla."
 autowrap_mode = 1
+
+[node name="Creditos" type="Button" parent="CanvasLayer" unique_id=1379662952]
+offset_left = 1056.0
+offset_top = 608.0
+offset_right = 1129.0
+offset_bottom = 639.0
+text = "Créditos
+"
+flat = true
+
+[node name="Painel" type="Panel" parent="CanvasLayer/Creditos" unique_id=251404369]
+layout_mode = 0
+offset_left = -905.0
+offset_top = -518.0
+offset_right = -57.0
+offset_bottom = -67.0
+
+[node name="Fechar" type="Button" parent="CanvasLayer/Creditos/Painel" unique_id=787938490]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 392.0
+offset_right = 820.0
+offset_bottom = 433.0
+text = "Fechar"
+
+[node name="Label" type="Label" parent="CanvasLayer/Creditos/Painel" unique_id=1082143052]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 42.0
+offset_right = 764.0
+offset_bottom = 403.0
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tristique turpis quis tincidunt convallis. In id nibh mauris. In dignissim dui at aliquam vehicula. In ornare purus a libero iaculis aliquam. Proin tempor, lectus vel mollis ultrices, lorem justo facilisis erat, vel mattis metus erat sit amet nisl. Morbi sit amet mattis dui. Praesent eu massa vitae orci tincidunt fringilla sed at orci. In porta tincidunt nulla quis tempor. Integer a viverra eros. Aliquam faucibus, ligula id accumsan blandit, urna purus interdum libero, vitae consequat nisl nulla non elit. Phasellus quis venenatis orci.
+
+Donec a turpis arcu. Donec elementum eleifend nibh ac auctor. Cras bibendum mattis orci quis interdum. Donec tincidunt risus at mauris consequat, quis feugiat risus lacinia. Morbi eget arcu at tortor bibendum auctor a eu ligula. Quisque tincidunt et lectus id tempor. Vivamus nec interdum dolor. Pellentesque rutrum dignissim justo, sed ultrices tellus imperdiet mollis. Duis vitae nisi in lorem consequat imperdiet.
+"
+autowrap_mode = 1

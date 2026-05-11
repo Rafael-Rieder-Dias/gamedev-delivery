@@ -9,9 +9,8 @@ enum State { #estados que o personagem pode estar, relevante para sprites
 	FRONTJUMP,
 	WALLGRAB,
 	SLIDE,
-	PARRY
-	#FALL,
-	#HURT,
+	PARRY,
+	HURT
 	#DEATH
 }
 
@@ -48,6 +47,10 @@ func animate(state):
 		State.PARRY:
 			if animation != "Parry":
 				play("Parry")
+				
+		State.HURT:
+			if animation != "Hurt":
+				play("Hurt")
 
 		State.IDLE:
 			if animation != "Idle":

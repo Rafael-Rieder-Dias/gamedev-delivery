@@ -3,12 +3,18 @@ extends Node2D
 @onready var musica = $MusicaDeFundo
 @onready var comecar = $CanvasLayer/ComecarJogo
 @onready var sair = $CanvasLayer/Sair
+<<<<<<< HEAD
 @onready var ajuda = $CanvasLayer/ComoJogar
 @onready var ajudapainel = $CanvasLayer/ComoJogar/Painel
 @onready var ajudapainelfec = $CanvasLayer/ComoJogar/Painel/Fechar
 @onready var creditos = $CanvasLayer/Creditos
 @onready var creditospainel = $CanvasLayer/Creditos/Painel
 @onready var creditospainelfec = $CanvasLayer/Creditos/Painel/Fechar
+=======
+@onready var painel = $CanvasLayer/ComoJogar/Painel
+@onready var painelfec = $CanvasLayer/ComoJogar/Painel/Fechar
+@onready var rafateste = $CanvasLayer/RafaTeste
+>>>>>>> 9a02ace (Teste de area do Rafa (está dando erro no estado atual.)
 
 func _ready() -> void:
 	ajudapainel.visible = false
@@ -31,6 +37,8 @@ func _process(_delta) -> void:
 		pass
 	if comecar.button_pressed:
 		get_tree().change_scene_to_file("res://scenes/teste.tscn")
+	if rafateste.button_pressed:
+		get_tree().change_scene_to_file("res://scenes/teste_rafa.tscn")
 	if sair.button_pressed:
 		get_tree().quit()
 	pass

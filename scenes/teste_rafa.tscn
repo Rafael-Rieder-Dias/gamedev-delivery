@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://e61gxu6kriix"]
+
+[ext_resource type="Script" uid="uid://do72q8beuu6gc" path="res://scenes/teste_rafa.gd" id="1_81pr3"]
+[ext_resource type="PackedScene" uid="uid://d2p5bv3trdc4s" path="res://scenes/personagem.tscn" id="2_h5dlk"]
+[ext_resource type="PackedScene" uid="uid://b0qlimox6v2vo" path="res://scenes/debug_area_rafa.tscn" id="3_cv8hg"]
+[ext_resource type="PackedScene" uid="uid://dbtoq7cpi3lva" path="res://scenes/interface.tscn" id="4_h7pir"]
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_wur0a"]
+
+[node name="Debug" type="Node2D" unique_id=1087216480]
+script = ExtResource("1_81pr3")
+
+[node name="Personagem" parent="." unique_id=1820077817 instance=ExtResource("2_h5dlk")]
+
+[node name="Debug_Area" parent="." unique_id=1029699458 instance=ExtResource("3_cv8hg")]
+
+[node name="MusicaDeFundo" type="AudioStreamPlayer" parent="." unique_id=305292665]
+stream = SubResource("AudioStreamMP3_wur0a")
+volume_db = -25.0
+bus = &"BGM"
+parameters/looping = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1319634963]
+
+[node name="Interface" parent="CanvasLayer" unique_id=410211333 instance=ExtResource("4_h7pir")]
+anchors_preset = -1
+anchor_left = -0.05
+offset_left = 50.600002
+offset_top = 4.0
+offset_right = 1201.6001
+offset_bottom = 648.0
+grow_vertical = 0
+
+[node name="DebugLabel" type="Label" parent="CanvasLayer" unique_id=822027001]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 33.0
+
+[node name="DebugLabel2" type="Label" parent="CanvasLayer" unique_id=1602743732]
+offset_left = 946.0
+offset_top = 10.0
+offset_right = 986.0
+offset_bottom = 33.0
+horizontal_alignment = 2

@@ -32,6 +32,13 @@ offset_right = 628.0
 offset_bottom = 492.0
 text = "Sair"
 
+[node name="RafaTeste" type="Button" parent="CanvasLayer" unique_id=63903850]
+offset_left = 547.0
+offset_top = 530.0
+offset_right = 927.0
+offset_bottom = 574.0
+text = "RafaTeste"
+
 [node name="ComoJogar" type="Button" parent="CanvasLayer" unique_id=818452086]
 offset_left = 502.0
 offset_top = 394.0

@@ -4,10 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://fvuxcyo53ylh" path="res://GraphicsAssets/Tiles/City Tiles/GandalfHardcore city tiles 32x32.png" id="2_ykyym"]
 [ext_resource type="Texture2D" uid="uid://eg1m7s0tlriv" path="res://GraphicsAssets/Tiles/City Tiles/Building Tiles 32x32.png" id="3_x61vy"]
 [ext_resource type="Texture2D" uid="uid://bfbq26ikxg2dk" path="res://GraphicsAssets/Tiles/City Tiles/GandalfHardcore city tiles slope.png" id="4_o6cut"]
-<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://8ct6f1nuvokd" path="res://scenes/inimigo_estatico.tscn" id="4_ykyym"]
-=======
->>>>>>> 9a02ace (Teste de area do Rafa (está dando erro no estado atual.)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ul6x0"]
 resource_name = "terreno"

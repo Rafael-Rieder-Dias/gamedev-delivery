@@ -1,1 +1,2 @@
 [CORRIGIDO] - Parry no ar troca de estado subitamente quando chega ao chão, podendo travar a caixa de colisão
+- Se o parry entra em contato com um personagem inimigo, ele fica desativado? (Não é consistente, mas acontece.)

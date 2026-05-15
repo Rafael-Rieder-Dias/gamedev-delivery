@@ -25,10 +25,10 @@ var pulo_sfx = preload("res://SoundsAssets/pulo.wav")
 var pegada_sfx = preload("res://SoundsAssets/pegada.wav")
 var freio_sfx = preload("res://SoundsAssets/freio(sonic).wav")
 var parry_sfx = preload("res://SoundsAssets/parry(emerald_00A2).wav")
+var parryhit_sfx = preload("res://SoundsAssets/parryhit(emerald_00AF).wav")
 
 #Sons do secondize
 var thud_sfx = preload("res://SoundsAssets/thudparede(pokemon).wav")
-var parryhit_sfx = preload("res://SoundsAssets/parryhit(emerald_00AF).wav")
 
 var step_timer := 0
 

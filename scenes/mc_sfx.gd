@@ -29,7 +29,6 @@ var parryhit_sfx = preload("res://SoundsAssets/parryhit(emerald_00AF).wav")
 
 #Sons do secondize
 var thud_sfx = preload("res://SoundsAssets/thudparede(pokemon).wav")
-var parryhit_sfx = preload("res://SoundsAssets/parryhit(emerald_00AF).wav")
 
 var step_timer := 0
 

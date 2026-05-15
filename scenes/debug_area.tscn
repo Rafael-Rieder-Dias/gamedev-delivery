@@ -1,12 +1,12 @@
 [gd_scene format=4 uid="uid://b0qlimox6v2vo"]
 
 [ext_resource type="Script" uid="uid://c0ih232kf36jh" path="res://scenes/debug_area.gd" id="1_btj2n"]
-[ext_resource type="Texture2D" uid="uid://fvuxcyo53ylh" path="res://GraphicsAssets/Tiles/GandalfHardcore City Tiles/GandalfHardcore city tiles 32x32.png" id="2_ykyym"]
-[ext_resource type="Texture2D" uid="uid://eg1m7s0tlriv" path="res://GraphicsAssets/Tiles/GandalfHardcore City Tiles/Building Tiles 32x32.png" id="3_x61vy"]
-[ext_resource type="Texture2D" uid="uid://bfbq26ikxg2dk" path="res://GraphicsAssets/Tiles/GandalfHardcore City Tiles/GandalfHardcore city tiles slope.png" id="4_o6cut"]
-[ext_resource type="Texture2D" uid="uid://4ve0o8vqfy12" path="res://GraphicsAssets/Tiles/GandalfHardcore City Tiles/City background sky.png" id="5_o6cut"]
-[ext_resource type="Texture2D" uid="uid://c7x2gnhp1tcxf" path="res://GraphicsAssets/Tiles/GandalfHardcore City Tiles/City background layer2.png" id="6_c1ia0"]
-[ext_resource type="Texture2D" uid="uid://q2g2lipipwuc" path="res://GraphicsAssets/Tiles/GandalfHardcore City Tiles/City background layer1.png" id="7_uou8j"]
+[ext_resource type="Texture2D" uid="uid://fvuxcyo53ylh" path="res://GraphicsAssets/Tiles/City Tiles/GandalfHardcore city tiles 32x32.png" id="2_ykyym"]
+[ext_resource type="Texture2D" uid="uid://eg1m7s0tlriv" path="res://GraphicsAssets/Tiles/City Tiles/Building Tiles 32x32.png" id="3_x61vy"]
+[ext_resource type="Texture2D" uid="uid://bfbq26ikxg2dk" path="res://GraphicsAssets/Tiles/City Tiles/GandalfHardcore city tiles slope.png" id="4_o6cut"]
+[ext_resource type="Texture2D" uid="uid://4ve0o8vqfy12" path="res://GraphicsAssets/Tiles/City Tiles/City background sky.png" id="5_o6cut"]
+[ext_resource type="Texture2D" uid="uid://c7x2gnhp1tcxf" path="res://GraphicsAssets/Tiles/City Tiles/City background layer2.png" id="6_c1ia0"]
+[ext_resource type="Texture2D" uid="uid://q2g2lipipwuc" path="res://GraphicsAssets/Tiles/City Tiles/City background layer1.png" id="7_uou8j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ul6x0"]
 resource_name = "terreno"
@@ -1164,12 +1164,12 @@ texture = ExtResource("5_o6cut")
 motion_mirroring = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=523349994]
-position = Vector2(0, 300)
-texture = ExtResource("6_c1ia0")
+position = Vector2(0, 175)
+texture = ExtResource("7_uou8j")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=850560856]
 motion_mirroring = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3" unique_id=457709306]
-position = Vector2(0, 300)
-texture = ExtResource("7_uou8j")
+position = Vector2(0, 180)
+texture = ExtResource("6_c1ia0")

@@ -75,16 +75,20 @@ script = ExtResource("1_ay7hp")
 tiro = ExtResource("4_u3xle")
 
 [node name="iE_Sprites" type="AnimatedSprite2D" parent="." unique_id=516015678]
-position = Vector2(17, 15)
+position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_4h0e1")
 animation = &"attack"
 
 [node name="iE_Colisao" type="CollisionShape2D" parent="." unique_id=1480869946]
-position = Vector2(17, 17.5)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_ay7hp")
 
 [node name="iE_SFX" type="AudioStreamPlayer2D" parent="." unique_id=1644137773]
+position = Vector2(0, 1)
 
 [node name="iE_Visao" type="RayCast2D" parent="." unique_id=1830200086]
-position = Vector2(-4, 15)
+position = Vector2(-21, -2)
 target_position = Vector2(-294, 0)
+
+[node name="Tiro" parent="." unique_id=3395632 instance=ExtResource("4_u3xle")]
+visible = false

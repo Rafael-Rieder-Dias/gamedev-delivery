@@ -11,6 +11,7 @@
 script = ExtResource("1_ddwwg")
 
 [node name="Personagem" parent="." unique_id=1820077817 instance=ExtResource("7_grbdc")]
+position = Vector2(558, 306)
 
 [node name="Debug_Area" parent="." unique_id=1029699458 instance=ExtResource("3_dp01m")]
 

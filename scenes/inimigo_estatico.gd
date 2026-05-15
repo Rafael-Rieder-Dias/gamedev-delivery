@@ -14,7 +14,7 @@ enum State {
 @onready var player = get_tree().current_scene.get_node("Personagem")
 
 @export var tiro : PackedScene
-@export var face = 0
+@export var face = -1
 
 var state := State.IDLE
 var state_frames := 0
@@ -78,5 +78,6 @@ func soundize():
 
 func shoot():
 	var t = tiro.instantiate()
+	t.x = face
 	add_child(t)
 	#t.transform = $Muzzle.transform

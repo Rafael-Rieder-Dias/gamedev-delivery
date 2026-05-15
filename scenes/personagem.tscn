@@ -636,38 +636,37 @@ radius = 5.0
 height = 26.0
 
 [node name="Personagem" type="CharacterBody2D" unique_id=410211333]
-position = Vector2(352, 131)
 floor_snap_length = 9.0
 script = ExtResource("1_7k68m")
 
 [node name="mc_Sprites" type="AnimatedSprite2D" parent="." unique_id=1439858816]
-position = Vector2(238, 172)
+position = Vector2(4, -1)
 sprite_frames = SubResource("SpriteFrames_guoat")
 animation = &"Idle"
 script = ExtResource("14_4rabl")
 
 [node name="mc_SFX" type="AudioStreamPlayer2D" parent="." unique_id=419064344]
-position = Vector2(233, 174)
+position = Vector2(-1, 1)
 stream = SubResource("AudioStreamPlaylist_nh4wr")
 max_polyphony = 8
 bus = &"SFX"
 script = ExtResource("15_mq83f")
 
 [node name="mc_Camera" type="Camera2D" parent="." unique_id=901854761]
-position = Vector2(280, 171)
+position = Vector2(46, -75)
 zoom = Vector2(2, 2)
 
-[node name="mc_DPe" type="CollisionShape2D" parent="." unique_id=27159885]
-position = Vector2(236, 174)
+[node name="mc_DPe" type="CollisionShape2D" parent="." unique_id=27159885 groups=["Personagem Corpo"]]
+position = Vector2(2, 1)
 shape = SubResource("RectangleShape2D_3m8kk")
 
-[node name="mc_Agch" type="CollisionShape2D" parent="." unique_id=537295592]
-position = Vector2(238, 180.5)
+[node name="mc_Agch" type="CollisionShape2D" parent="." unique_id=537295592 groups=["Personagem Corpo"]]
+position = Vector2(4, 7.5)
 shape = SubResource("RectangleShape2D_wur0a")
 disabled = true
 
-[node name="mc_Prry" type="CollisionShape2D" parent="." unique_id=2032474245]
-position = Vector2(261, 172)
+[node name="mc_Prry" type="CollisionShape2D" parent="." unique_id=2032474245 groups=["Personagem Parry"]]
+position = Vector2(27.000002, -1)
 skew = -0.15707964
 shape = SubResource("CapsuleShape2D_gir6c")
 disabled = true

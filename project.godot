@@ -25,6 +25,11 @@ movie_writer/movie_file="D:/Rafael/Projetos/gamedev/gamedev-delivery/capture.avi
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[global_group]
+
+"Personagem Parry"="Para referenciar o Parry do Personagem"
+"Personagem Corpo"="Para referenciar o corpo do personagem"
+
 [input]
 
 left={

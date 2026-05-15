@@ -13,6 +13,9 @@ enum State {
 
 @onready var player = get_tree().current_scene.get_node("Personagem")
 
+@export var tiro : PackedScene
+@export var face = 0
+
 var state := State.IDLE
 var state_frames := 0
 var state_changed := false
@@ -20,7 +23,10 @@ var state_changed := false
 var idle_loop := 0
 var attack_loop := 0
 
-func _ready(): 
+func _ready():
+	if face:
+		#código para flippar o behavior caso esteja virado pro outro lado
+		pass
 	pass
 
 func _physics_process(delta):
@@ -42,6 +48,8 @@ func behaviorize(delta):
 				state_changed = true
 				pass
 		State.ATTACK:
+			if state_frames == 5:
+				shoot()
 			if state_frames >= 20:
 				state = State.IDLE
 				attack_loop = 40
@@ -67,3 +75,8 @@ func soundize():
 		_:
 			pass
 	pass
+
+func shoot():
+	var t = tiro.instantiate()
+	add_child(t)
+	#t.transform = $Muzzle.transform

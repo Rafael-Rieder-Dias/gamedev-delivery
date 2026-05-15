@@ -79,6 +79,8 @@ func _ready():
 	update_face(0) #guardar posição inicial das caixas de colisão
 
 func _physics_process(delta):
+	
+	
 	var input_direction := Input.get_axis("left", "right")
 
 	get_input()

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c5thf7kavkapf"]
+
+[ext_resource type="Script" uid="uid://cpkl845yx5s1u" path="res://tiro.gd" id="1_gp2hl"]
+[ext_resource type="Texture2D" uid="uid://ygaco7xqmebe" path="res://GraphicsAssets/SpriteWork/GFX/bullet.png" id="2_wib4g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpuae"]
+size = Vector2(6, 8)
+
+[node name="Tiro" type="Area2D" unique_id=3395632]
+position = Vector2(0, 8)
+script = ExtResource("1_gp2hl")
+
+[node name="t_GFX" type="Sprite2D" parent="." unique_id=1921083669]
+rotation = 3.1415927
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_wib4g")
+
+[node name="t_SFX" type="AudioStreamPlayer2D" parent="." unique_id=126328712]
+
+[node name="t_PHY" type="CollisionShape2D" parent="." unique_id=970150295]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_vpuae")

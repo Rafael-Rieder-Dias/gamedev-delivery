@@ -80,4 +80,8 @@ func shoot():
 	var t = tiro.instantiate()
 	t.x = face
 	add_child(t)
-	#t.transform = $Muzzle.transform
+	t.physics.disabled = true
+	await get_tree().create_timer(0.15).timeout
+	t.physics.disabled = false
+	t.connect("hitplayer", Callable(player, "_on_bullet_hitplayer"))
+	t.connect("hitparry", Callable(player, "_on_bullet_hitparry"))

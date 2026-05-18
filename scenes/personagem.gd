@@ -15,6 +15,8 @@ extends CharacterBody2D
 @export var frontjump_cost := 10
 
 @export var parry_duration := 0.25 #janela de parry em segundos
+@export var hurt_duration := 0.5 #duração do estado hurt em segundos
+@export var death_delay := 0.15 #tempo curto entre o último hurt e a morte
 
 @export var camera_offset_x := 100 #distância da câmera para frente
 
@@ -37,13 +39,13 @@ enum State { #estados que o personagem pode estar, relevante para sprites
 	SLIDE,
 	PARRY,
 	HURT,
-	#DEATH
+	DEATH
 }
 
 enum Second {
 	THUD,
+	PARRYHIT,
 	#CHARGE,
-	#PARRYHIT
 }
 
 enum FACE {
@@ -59,6 +61,8 @@ var wants_run = false #trava de corrida do personagem
 
 var turn_lock_time := 0.0 #trava de movimento
 var parry_time_left := 0.0 #trava de parry
+var hurt_time_left := 0.0 #trava de hurt
+var death_time_left := 0.0 #tempo restante até a morte
 
 var stored_velocity := 0 #velocidade guardada, relevante pra momentum
 
@@ -70,6 +74,8 @@ var caixape_base_pos := Vector2.ZERO #para guardar posições das caixas de coli
 var caixaagch_base_pos := Vector2.ZERO #para guardar posições das caixas de colisão
 var caixaprry_base_pos := Vector2.ZERO #para guardar posições das caixas de colisão
 var collision_flip_pivot_x := 0.0 #para guardar posições das caixas de colisão
+
+signal PlayerDeath
 
 func _ready(): 
 	caixape_base_pos = caixape.position
@@ -146,6 +152,22 @@ func get_input():
 func update_state(input_direction, delta):
 	if is_skidding(input_direction): #desativa corrida se freiar
 		wants_run = false
+		
+	if state == State.DEATH:
+		return
+
+	if state == State.HURT:
+		hurt_time_left = max(hurt_time_left - delta, 0.0)
+		if hurt_time_left > 0.0:
+			return
+		if energy < 0:
+			death_time_left = max(death_time_left - delta, 0.0)
+			if death_time_left > 0.0:
+				return
+			state = State.DEATH
+			emit_signal("PlayerDeath")
+			return
+		state = last_state[1]
 
 	if state == State.WALLGRAB and state_frames > 30:
 		face = FACE.Left if face == FACE.Right else FACE.Right
@@ -217,18 +239,20 @@ func update_second(_delta):
 	var impact_velocity_x := velocity.x
 	if (abs(impact_velocity_x) > 300) and is_on_wall() and is_on_floor():
 		sfx.secondize(Second.THUD) #MUDAR QUANDO THUD MUDAR
-	
-	#if true:
-		#sfx.secondize(Second.HURT)
-		
-	#if true:
-		#sfx.secondize(Second.PARRYHIT)
 		
 
 func update_movement(input_direction, delta):
 	var target_speed = walk_speed
 	if wants_run:
 		target_speed = run_speed
+	
+	if state == State.DEATH:
+		velocity.x = 0
+		velocity.y = 0
+		return
+		
+	if state == State.HURT:
+		velocity.x = velocity.x/2
 		
 	if state == State.WALLGRAB:
 		velocity.y = 0
@@ -299,7 +323,12 @@ func update_face(_input_direction):
 		caixaprry.position.x = (2.0 * collision_flip_pivot_x) - caixaprry_base_pos.x
 
 func update_collision():
-	if state == State.SLIDE:
+	if state == State.DEATH:
+		caixape.disabled = true
+		caixaagch.disabled = true
+		caixaprry.disabled = true	
+
+	elif state == State.SLIDE:
 		caixape.disabled = true
 		caixaagch.disabled = false
 	else:
@@ -398,3 +427,16 @@ func is_skidding(input_direction): #FEITO POR IA ---- REVISAR
 			return false
 
 		return sign(input_direction) != sign(velocity.x)
+		
+func _on_bullet_hitplayer():
+	energy -= 10
+	state = State.HURT
+	hurt_time_left = hurt_duration
+	if energy < 0:
+		death_time_left = death_delay
+	else:
+		death_time_left = 0.0
+	
+func _on_bullet_hitparry():
+	energy += 10
+	sfx.secondize(Second.PARRYHIT)

@@ -642,7 +642,7 @@ script = ExtResource("1_7k68m")
 [node name="mc_Sprites" type="AnimatedSprite2D" parent="." unique_id=1439858816]
 position = Vector2(4, -1)
 sprite_frames = SubResource("SpriteFrames_guoat")
-animation = &"Hurt"
+animation = &"Idle"
 script = ExtResource("14_4rabl")
 
 [node name="mc_SFX" type="AudioStreamPlayer2D" parent="." unique_id=419064344]

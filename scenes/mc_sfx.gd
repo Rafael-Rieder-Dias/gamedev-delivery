@@ -11,7 +11,7 @@ enum State { #estados que o personagem pode estar, relevante para sprites
 	SLIDE,
 	PARRY,
 	HURT,
-	#DEATH
+	DEATH
 }
 
 enum Second {
@@ -25,10 +25,12 @@ var pulo_sfx = preload("res://SoundsAssets/pulo.wav")
 var pegada_sfx = preload("res://SoundsAssets/pegada.wav")
 var freio_sfx = preload("res://SoundsAssets/freio(sonic).wav")
 var parry_sfx = preload("res://SoundsAssets/parry(emerald_00A2).wav")
-var parryhit_sfx = preload("res://SoundsAssets/parryhit(emerald_00AF).wav")
+var hurt_sfx = preload("res://SoundsAssets/levardano.wav")
+var death_sfx = preload("res://SoundsAssets/player_miss(castlevania).mp3")
 
 #Sons do secondize
 var thud_sfx = preload("res://SoundsAssets/thudparede(pokemon).wav")
+var parryhit_sfx = preload("res://SoundsAssets/parryhit(emerald_00AF).wav")
 
 var step_timer := 0
 
@@ -75,9 +77,13 @@ func soundize(state, state_frames, delta):
 				
 		State.HURT:
 			if state_frames == 0:
-				#stream = hurt_sfx
-				#play()
-				pass
+				stream = hurt_sfx
+				play()
+				
+		State.DEATH:
+			if state_frames == 7:
+				stream = death_sfx
+				play()
 
 		_:
 			pass
@@ -91,10 +97,6 @@ func secondize(second):
 		Second.PARRYHIT:
 			stream = parryhit_sfx
 			play()
-			
-		#Second.HURT:
-			#stream = hurt_sfx
-			#play()
 			
 		_:
 			pass

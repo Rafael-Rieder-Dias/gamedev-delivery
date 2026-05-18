@@ -10,6 +10,7 @@ extends Node2D
 func _ready():
 	print("Level loaded")
 	get_tree().debug_collisions_hint = true
+	player.connect("PlayerDeath", Callable(self, "on_player_death"))
 	#musica.stream = preload("res://SoundsAssets/sf3alex.mp3")
 	#musica.play()
 	
@@ -49,3 +50,8 @@ func get_bgm_name(variavel):
 	if stream == null:
 		return "NONE"
 	return stream.resource_path.get_file()
+
+func on_player_death():
+	print("Player has died. Restarting level...")
+	await get_tree().create_timer(10).timeout
+	get_tree().reload_current_scene()

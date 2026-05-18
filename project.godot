@@ -29,6 +29,7 @@ version_control/autoload_on_startup=true
 
 "Personagem Parry"="Para referenciar o Parry do Personagem"
 "Personagem Corpo"="Para referenciar o corpo do personagem"
+"Inimigo Corpo"="Corpo do inimigo para referência"
 
 [input]
 

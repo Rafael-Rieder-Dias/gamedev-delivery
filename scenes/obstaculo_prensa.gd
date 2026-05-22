@@ -1,17 +1,66 @@
-extends Area2D
+extends StaticBody2D
 
 @onready var gfx = $p_GFX
-@onready var phy = $p_PHY
+@onready var phy = $p_BOD
+@onready var kil = $p_KIL
+@onready var player = get_tree().current_scene.get_node("Personagem")
 
-var delay := 0;
+var pressing_down := false
 
-func _ready() -> void:
-	pass
+var original_size: Vector2
+var original_pos: Vector2
+var original_kil_pos: Vector2
 
-func _process(delta: float) -> void:
-	delay -= delta
-	if !delay:
-		gfx.play("default")
-		delay = 600
-		pass
-	pass
+signal killplayer
+
+
+func _ready():
+	original_size = phy.shape.size
+	original_pos = phy.position
+
+	kil.body_entered.connect(_on_kil_body_entered)
+	kil.monitoring = false
+
+	loop_press()
+
+
+func loop_press():
+	while true:
+		await get_tree().create_timer(0.6).timeout
+		await press()
+
+
+func press():
+	var frame_tex = gfx.sprite_frames.get_frame_texture("defaultA", 0)
+	var target_size = frame_tex.get_size() * gfx.scale
+
+	var extra_height = target_size.y - original_size.y
+	var target_pos = original_pos + Vector2(0, extra_height / 2.0)
+
+	# DOWN
+	pressing_down = true
+	kil.monitoring = true
+	gfx.play("defaultA")
+
+	var tween = create_tween()
+	tween.parallel().tween_property(phy.shape, "size", target_size, 0.15)
+	tween.parallel().tween_property(phy, "position", target_pos, 0.15)
+
+	await gfx.animation_finished
+
+	# UP
+	pressing_down = false
+	kil.monitoring = false
+	gfx.play("defaultB")
+
+	var tween2 = create_tween()
+	tween2.parallel().tween_property(phy.shape, "size", original_size, 0.15)
+	tween2.parallel().tween_property(phy, "position", original_pos, 0.15)
+
+	await gfx.animation_finished
+
+
+func _on_kil_body_entered(body):
+	if pressing_down and body == player:
+		killplayer.emit()
+		print("killplayer")

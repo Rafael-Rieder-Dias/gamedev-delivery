@@ -15,10 +15,6 @@ region = Rect2(32, 0, 32, 64)
 atlas = ExtResource("1_jmumd")
 region = Rect2(64, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r16ep"]
-atlas = ExtResource("1_jmumd")
-region = Rect2(96, 0, 32, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_r3vcj"]
 atlas = ExtResource("1_jmumd")
 region = Rect2(128, 0, 32, 64)
@@ -46,10 +42,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_58j4c")
+}],
+"loop": false,
+"name": &"defaultA",
+"speed": 16.0
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r16ep")
-}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r3vcj")
 }, {
@@ -63,22 +61,31 @@ animations = [{
 "texture": SubResource("AtlasTexture_yqjhk")
 }],
 "loop": false,
-"name": &"default",
-"speed": 8.0
+"name": &"defaultB",
+"speed": 16.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxiod"]
 size = Vector2(64, 67)
 
-[node name="Prensa" type="Area2D" unique_id=236099275]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i02oa"]
+size = Vector2(57, 21)
+
+[node name="Prensa" type="StaticBody2D" unique_id=904824038]
 script = ExtResource("1_i02oa")
 
 [node name="p_GFX" type="AnimatedSprite2D" parent="." unique_id=272797883]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3tb6s")
-frame = 7
-frame_progress = 1.0
+animation = &"defaultA"
 
-[node name="p_PHY" type="CollisionShape2D" parent="." unique_id=642429476]
+[node name="p_BOD" type="CollisionShape2D" parent="." unique_id=642429476]
 position = Vector2(1, -27.5)
 shape = SubResource("RectangleShape2D_rxiod")
+
+[node name="p_KIL" type="Area2D" parent="." unique_id=611520653]
+position = Vector2(1, -27.5)
+
+[node name="p_KIL_BOD" type="CollisionShape2D" parent="p_KIL" unique_id=865815288]
+position = Vector2(-0.5, 82)
+shape = SubResource("RectangleShape2D_i02oa")

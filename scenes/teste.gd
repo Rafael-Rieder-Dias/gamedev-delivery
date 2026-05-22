@@ -11,7 +11,7 @@ extends Node2D
 
 func _ready():
 	print("Level loaded")
-	#get_tree().debug_collisions_hint = true
+	get_tree().debug_collisions_hint = true
 	death_sfx.loop = false
 	player.connect("PlayerDeath", Callable(self, "on_player_death"))
 	

@@ -89,6 +89,3 @@ position = Vector2(0, 1)
 [node name="iE_Visao" type="RayCast2D" parent="." unique_id=1830200086]
 position = Vector2(-21, -2)
 target_position = Vector2(-294, 0)
-
-[node name="Tiro" parent="." unique_id=3395632 instance=ExtResource("4_u3xle")]
-visible = false

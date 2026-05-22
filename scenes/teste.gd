@@ -7,12 +7,13 @@ extends Node2D
 @onready var area1 = $Debug_Area
 @onready var musica = $MusicaDeFundo
 
+@onready var death_sfx = preload("res://SoundsAssets/player_miss(castlevania).mp3")
+
 func _ready():
 	print("Level loaded")
-	get_tree().debug_collisions_hint = true
+	#get_tree().debug_collisions_hint = true
+	death_sfx.loop = false
 	player.connect("PlayerDeath", Callable(self, "on_player_death"))
-	#musica.stream = preload("res://SoundsAssets/sf3alex.mp3")
-	#musica.play()
 	
 func _process(_delta):
 	debug_label.text = "BGM: %s\nSTATE: %s\nSFX: %s\nVELY: %s\nVELX: %s\nSTORE.VELX: %s\nRUN: %s" % [
@@ -37,6 +38,8 @@ func get_state_name():
 		player.State.WALLGRAB: return "WALLGRAB"
 		player.State.SLIDE: return "SLIDE"
 		player.State.PARRY: return "PARRY"
+		player.State.HURT: return "HURT"
+		player.State.DEATH: return "DEATH"
 	return "UNKNOWN"
 	
 func get_sfx_name():
@@ -52,6 +55,7 @@ func get_bgm_name(variavel):
 	return stream.resource_path.get_file()
 
 func on_player_death():
-	print("Player has died. Restarting level...")
-	await get_tree().create_timer(10).timeout
+	musica.stream = death_sfx
+	musica.play()
+	await get_tree().create_timer(2).timeout
 	get_tree().reload_current_scene()

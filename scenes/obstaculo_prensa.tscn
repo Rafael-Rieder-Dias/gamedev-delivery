@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://btlb71hb41gq"]
+
+[ext_resource type="Script" uid="uid://ce2bcnjwpfmwh" path="res://scenes/obstaculo_prensa.gd" id="1_i02oa"]
+[ext_resource type="Texture2D" uid="uid://b65yriiy1mvfy" path="res://GraphicsAssets/Tiles/Industrial Tiles/Objects/Hammer.png" id="1_jmumd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i02oa"]
+atlas = ExtResource("1_jmumd")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxiod"]
+atlas = ExtResource("1_jmumd")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58j4c"]
+atlas = ExtResource("1_jmumd")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r16ep"]
+atlas = ExtResource("1_jmumd")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3vcj"]
+atlas = ExtResource("1_jmumd")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnva2"]
+atlas = ExtResource("1_jmumd")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sppkw"]
+atlas = ExtResource("1_jmumd")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqjhk"]
+atlas = ExtResource("1_jmumd")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3tb6s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i02oa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxiod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58j4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r16ep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3vcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnva2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sppkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqjhk")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxiod"]
+size = Vector2(64, 67)
+
+[node name="Prensa" type="Area2D" unique_id=236099275]
+script = ExtResource("1_i02oa")
+
+[node name="p_GFX" type="AnimatedSprite2D" parent="." unique_id=272797883]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_3tb6s")
+frame = 7
+frame_progress = 1.0
+
+[node name="p_PHY" type="CollisionShape2D" parent="." unique_id=642429476]
+position = Vector2(1, -27.5)
+shape = SubResource("RectangleShape2D_rxiod")

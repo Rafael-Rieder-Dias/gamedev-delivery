@@ -35,10 +35,13 @@ func on_tiro_collided_with(collision):
 	set_deferred("monitorable", false)
 	if collision.name == "Personagem":
 		if collision.state == collision.State.PARRY and not collision.caixaprry.disabled:
+			sprites.play("DISPERSE_PRY")
 			emit_signal("hitparry")
 		else:
+			sprites.play("DISPERSE_HIT")
 			emit_signal("hitplayer")
+	else: 
+		sprites.play("DISPERSE_HIT")
 	physics.set_deferred("disabled", true)
-	sprites.play("DISPERSE")
 	await sprites.animation_finished
 	queue_free()

@@ -26,7 +26,6 @@ var pegada_sfx = preload("res://SoundsAssets/pegada.wav")
 var freio_sfx = preload("res://SoundsAssets/freio(sonic).wav")
 var parry_sfx = preload("res://SoundsAssets/parry(emerald_00A2).wav")
 var hurt_sfx = preload("res://SoundsAssets/levardano.wav")
-var death_sfx = preload("res://SoundsAssets/player_miss(castlevania).mp3")
 
 #Sons do secondize
 var thud_sfx = preload("res://SoundsAssets/thudparede(pokemon).wav")
@@ -79,12 +78,6 @@ func soundize(state, state_frames, delta):
 			if state_frames == 0:
 				stream = hurt_sfx
 				play()
-				
-		State.DEATH:
-			if state_frames == 7:
-				stream = death_sfx
-				play()
-
 		_:
 			pass
 

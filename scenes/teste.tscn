@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bvkqs62jbihn3" path="res://scenes/teste.gd" id="1_ddwwg"]
 [ext_resource type="PackedScene" uid="uid://dbtoq7cpi3lva" path="res://scenes/interface.tscn" id="2_cgmdw"]
-[ext_resource type="PackedScene" uid="uid://b0qlimox6v2vo" path="res://scenes/debug_area.tscn" id="3_dp01m"]
+[ext_resource type="PackedScene" uid="uid://b0qlimox6v2vo" path="res://scenes/debug_area.tscn" id="4_dp01m"]
 [ext_resource type="PackedScene" uid="uid://d2p5bv3trdc4s" path="res://scenes/personagem.tscn" id="7_grbdc"]
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_wur0a"]
@@ -12,8 +12,6 @@ script = ExtResource("1_ddwwg")
 
 [node name="Personagem" parent="." unique_id=1820077817 instance=ExtResource("7_grbdc")]
 position = Vector2(558, 306)
-
-[node name="Debug_Area" parent="." unique_id=1029699458 instance=ExtResource("3_dp01m")]
 
 [node name="MusicaDeFundo" type="AudioStreamPlayer" parent="." unique_id=305292665]
 stream = SubResource("AudioStreamMP3_wur0a")
@@ -44,3 +42,5 @@ offset_top = 10.0
 offset_right = 986.0
 offset_bottom = 33.0
 horizontal_alignment = 2
+
+[node name="Debug_Area" parent="." unique_id=1029699458 instance=ExtResource("4_dp01m")]

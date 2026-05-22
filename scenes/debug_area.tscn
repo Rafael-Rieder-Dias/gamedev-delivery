@@ -6,6 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://bfbq26ikxg2dk" path="res://GraphicsAssets/Tiles/City Tiles/GandalfHardcore city tiles slope.png" id="4_o6cut"]
 [ext_resource type="PackedScene" uid="uid://8ct6f1nuvokd" path="res://scenes/inimigo_estatico.tscn" id="4_ykyym"]
 [ext_resource type="PackedScene" uid="uid://cdquv6xdvttbf" path="res://scenes/inimigo_aereo.tscn" id="5_x61vy"]
+[ext_resource type="Texture2D" uid="uid://fvuxcyo53ylh" path="res://GraphicsAssets/Tiles/City Tiles/GandalfHardcore city tiles 32x32.png" id="2_ykyym"]
+[ext_resource type="Texture2D" uid="uid://eg1m7s0tlriv" path="res://GraphicsAssets/Tiles/City Tiles/Building Tiles 32x32.png" id="3_x61vy"]
+[ext_resource type="Texture2D" uid="uid://bfbq26ikxg2dk" path="res://GraphicsAssets/Tiles/City Tiles/GandalfHardcore city tiles slope.png" id="4_o6cut"]
+[ext_resource type="Texture2D" uid="uid://4ve0o8vqfy12" path="res://GraphicsAssets/Tiles/City Tiles/City background sky.png" id="5_o6cut"]
+[ext_resource type="Texture2D" uid="uid://c7x2gnhp1tcxf" path="res://GraphicsAssets/Tiles/City Tiles/City background layer2.png" id="6_c1ia0"]
+[ext_resource type="Texture2D" uid="uid://q2g2lipipwuc" path="res://GraphicsAssets/Tiles/City Tiles/City background layer1.png" id="7_uou8j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ul6x0"]
 resource_name = "terreno"

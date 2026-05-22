@@ -86,6 +86,7 @@ text = "Créditos
 flat = true
 
 [node name="Painel" type="Panel" parent="CanvasLayer/Creditos" unique_id=251404369]
+visible = false
 layout_mode = 0
 offset_left = -905.0
 offset_top = -518.0

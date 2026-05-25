@@ -12,9 +12,9 @@ extends Node2D
 func _ready():
 	print("Level loaded")
 	get_tree().debug_collisions_hint = true
+	player.PlayerDeath.connect(on_player_death)
 	death_sfx.loop = false
-	player.connect("PlayerDeath", Callable(self, "on_player_death"))
-	
+
 func _process(_delta):
 	debug_label.text = "BGM: %s\nSTATE: %s\nSFX: %s\nVELY: %s\nVELX: %s\nSTORE.VELX: %s\nRUN: %s" % [
 		get_bgm_name(area1),
@@ -55,6 +55,7 @@ func get_bgm_name(variavel):
 	return stream.resource_path.get_file()
 
 func on_player_death():
+	print("teste")
 	musica.stream = death_sfx
 	musica.play()
 	await get_tree().create_timer(2).timeout

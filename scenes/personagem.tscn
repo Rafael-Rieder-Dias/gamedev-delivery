@@ -635,7 +635,7 @@ size = Vector2(26, 15)
 radius = 5.0
 height = 26.0
 
-[node name="Personagem" type="CharacterBody2D" unique_id=410211333]
+[node name="Personagem" type="CharacterBody2D" unique_id=410211333 groups=["Personagem Corpo"]]
 floor_snap_length = 9.0
 script = ExtResource("1_7k68m")
 
@@ -656,18 +656,20 @@ script = ExtResource("15_mq83f")
 position = Vector2(46, -75)
 zoom = Vector2(2, 2)
 
-[node name="mc_DPe" type="CollisionShape2D" parent="." unique_id=27159885 groups=["Personagem Corpo"]]
+[node name="mc_DPe" type="CollisionShape2D" parent="." unique_id=27159885]
 position = Vector2(2, 1)
 shape = SubResource("RectangleShape2D_3m8kk")
 
-[node name="mc_Agch" type="CollisionShape2D" parent="." unique_id=537295592 groups=["Personagem Corpo"]]
+[node name="mc_Agch" type="CollisionShape2D" parent="." unique_id=537295592]
 position = Vector2(4, 7.5)
 shape = SubResource("RectangleShape2D_wur0a")
 disabled = true
 
-[node name="mc_Prry" type="CollisionShape2D" parent="." unique_id=2032474245 groups=["Personagem Parry"]]
+[node name="mc_Prry" type="Area2D" parent="." unique_id=451383966 groups=["Personagem Parry"]]
+
+[node name="mc_Prry_Col" type="CollisionShape2D" parent="mc_Prry" unique_id=2032474245 groups=["Personagem Parry"]]
 position = Vector2(27.000002, -1)
-skew = -0.15707964
+skew = -0.1570797
 shape = SubResource("CapsuleShape2D_gir6c")
 disabled = true
 debug_color = Color(0.93402207, 0.19424686, 0.4346357, 0.41960785)

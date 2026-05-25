@@ -11,15 +11,15 @@ var original_size: Vector2
 var original_pos: Vector2
 var original_kil_pos: Vector2
 
-signal killplayer
+signal hitkill
 
 
 func _ready():
 	original_size = phy.shape.size
 	original_pos = phy.position
-
 	kil.body_entered.connect(_on_kil_body_entered)
 	kil.monitoring = false
+	hitkill.connect(Callable(player, "_on_hitkill"))
 
 	loop_press()
 
@@ -62,5 +62,5 @@ func press():
 
 func _on_kil_body_entered(body):
 	if pressing_down and body == player:
-		killplayer.emit()
-		print("killplayer")
+		hitkill.emit()
+		print("hitkill")

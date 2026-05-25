@@ -1,3 +1,4 @@
+class_name Personagem
 extends CharacterBody2D
 
 @export var walk_speed := 100 #velocidade máxima de caminhada
@@ -26,7 +27,7 @@ extends CharacterBody2D
 
 @onready var caixape = $mc_DPe
 @onready var caixaagch = $mc_Agch
-@onready var caixaprry = $mc_Prry
+@onready var caixaprry: CollisionShape2D = $mc_Prry/mc_Prry_Col		
 
 enum State { #estados que o personagem pode estar, relevante para sprites
 	IDLE,
@@ -440,3 +441,7 @@ func _on_bullet_hitplayer():
 func _on_bullet_hitparry():
 	energy += 10
 	sfx.secondize(Second.PARRYHIT)
+	
+func _on_hitkill():
+	state = State.DEATH
+	emit_signal("PlayerDeath")

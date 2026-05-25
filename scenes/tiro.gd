@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var sprites = $t_GFX
-@onready var physics = $t_PHY
+@onready var physics: CollisionShape2D = $t_PHY
 
 var speed = 150
 @export var x = 1
@@ -14,8 +14,8 @@ var has_collided := false
 
 func _ready():
 	sprites.play("BULLET")
-	connect("body_entered", Callable(self, "on_tiro_collided_with"))
-	connect("area_entered", Callable(self, "on_tiro_collided_with"))
+	connect("body_entered", Callable(self, "on_tiro_entered_body"))
+	connect("area_entered", Callable(self, "on_tiro_entered_area"))
 
 func _physics_process(delta):
 	if has_collided:
@@ -27,21 +27,22 @@ func _physics_process(delta):
 	else:
 		position += Vector2(x, 0) * speed * delta
 
-func on_tiro_collided_with(collision):
+func on_tiro_collided_with(parry):
 	if has_collided:
 		return
 	has_collided = true
-	set_deferred("monitoring", false)
-	set_deferred("monitorable", false)
-	if collision.name == "Personagem":
-		if collision.state == collision.State.PARRY and not collision.caixaprry.disabled:
-			sprites.play("DISPERSE_PRY")
-			emit_signal("hitparry")
-		else:
-			sprites.play("DISPERSE_HIT")
-			emit_signal("hitplayer")
-	else: 
-		sprites.play("DISPERSE_HIT")
+	if parry: sprites.play("DISPERSE_PRY") 
+	else: sprites.play("DISPERSE_HIT")
 	physics.set_deferred("disabled", true)
 	await sprites.animation_finished
 	queue_free()
+
+func on_tiro_entered_body(body):
+	if body.is_in_group("Personagem Corpo"):
+		emit_signal("hitplayer")
+	on_tiro_collided_with(false)
+
+func on_tiro_entered_area(area):
+	if area.is_in_group("Personagem Parry"):
+		emit_signal("hitparry")
+	on_tiro_collided_with(true)

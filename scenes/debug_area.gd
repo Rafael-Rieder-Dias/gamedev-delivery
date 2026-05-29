@@ -35,7 +35,3 @@ func _set_player_camera(enabled: bool):
 	var player_camera = player.get("camera")
 	if player_camera is Camera2D:
 		player_camera.enabled = enabled
-
-func _on_obstaculo_prensa_hitkill():
-	print("teste")
-	connect("hitkill", Callable(player, "_on_hitkill"))

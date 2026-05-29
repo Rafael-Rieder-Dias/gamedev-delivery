@@ -58,7 +58,7 @@ enum FACE {
 var last_state := [State.IDLE, State.IDLE] # [0] ultimo estado (pode ser o mesmo que o atual), [1] estado anterior (não pode ser o mesmo que o atual)
 var state_frames := 0 #há quanto tempo está no mesmo state
 
-var wants_run = false #trava de corrida do personagem
+var wants_run := false #trava de corrida do personagem
 
 var turn_lock_time := 0.0 #trava de movimento
 var parry_time_left := 0.0 #trava de parry
@@ -131,10 +131,13 @@ func get_input():
 	if state == State.PARRY:
 		return
 	
-	if Input.is_action_just_pressed("a_button"): #gatilho de corrida
+	if Input.is_action_just_pressed("a_button"):
 		if state == State.SLIDE and can_exit_slide():
 			state = State.RUN #sair de um slide para uma corrida
+	
+	if Input.is_action_pressed("a_button"): #gatilho de corrida
 		wants_run = true
+	else: wants_run = false
 		
 	if Input.is_action_pressed("down") and state == State.RUN:
 		state = State.SLIDE
@@ -151,9 +154,6 @@ func get_input():
 
 
 func update_state(input_direction, delta):
-	if is_skidding(input_direction): #desativa corrida se freiar
-		wants_run = false
-		
 	if state == State.DEATH:
 		return
 
@@ -228,7 +228,6 @@ func update_state(input_direction, delta):
 
 	if abs(velocity.x) < 25:
 		state = State.IDLE
-		wants_run = false
 		return
 
 	if abs(velocity.x) > 300:
@@ -428,6 +427,11 @@ func is_skidding(input_direction): #FEITO POR IA ---- REVISAR
 			return false
 
 		return sign(input_direction) != sign(velocity.x)
+
+func run(_input_direction) -> bool:
+	if is_skidding(_input_direction):
+		return false
+	return true
 		
 func _on_bullet_hitplayer():
 	energy -= 10

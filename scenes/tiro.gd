@@ -21,7 +21,7 @@ func _ready():
 func _physics_process(delta):
 	if has_collided:
 		return
-	if player_position != null:
+	if y != null && player_position != null:
 		var direction = (player_position - global_position).normalized()
 		position += direction * speed * delta
 	else:

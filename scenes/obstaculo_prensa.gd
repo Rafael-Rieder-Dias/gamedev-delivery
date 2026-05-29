@@ -26,7 +26,7 @@ func _ready():
 
 func loop_press():
 	while true:
-		await get_tree().create_timer(0.6).timeout
+		await get_tree().create_timer(2).timeout
 		await press()
 
 

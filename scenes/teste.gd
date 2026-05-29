@@ -16,7 +16,8 @@ func _ready():
 	death_sfx.loop = false
 
 func _process(_delta):
-	debug_label.text = "BGM: %s\nSTATE: %s\nSFX: %s\nVELY: %s\nVELX: %s\nSTORE.VELX: %s\nRUN: %s" % [
+	debug_label.text = "LIFES: %s\nBGM: %s\nSTATE: %s\nSFX: %s\nVELY: %s\nVELX: %s\nSTORE.VELX: %s\nRUN: %s" % [
+		get_tree().lifes,
 		get_bgm_name(area1),
 		get_state_name(),
 		get_sfx_name(),

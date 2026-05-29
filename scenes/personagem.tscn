@@ -493,7 +493,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Parry",
-"speed": 15.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,

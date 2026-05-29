@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://qed2h1v35vj8"]
 
 [ext_resource type="Script" uid="uid://crilc455h6g0r" path="res://scenes/main.gd" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://y2t63m2wo8ut" path="res://scenes/menu_principal.tscn" id="2_0wfyh"]
 
 [node name="Main" type="Node2D" unique_id=1451427858]
 script = ExtResource("1_o5qli")
+Menu = ExtResource("2_0wfyh")

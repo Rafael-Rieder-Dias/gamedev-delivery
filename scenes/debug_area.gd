@@ -5,6 +5,7 @@ extends Area2D
 @export var bgm_area1: AudioStream = preload("res://SoundsAssets/sf3alex.mp3")
 
 @onready var area_camera: Camera2D = $CameraArea
+@onready var pbg = $ParallaxBackground
 
 func _ready():
 	body_entered.connect(_on_body_entered)
@@ -13,7 +14,8 @@ func _ready():
 func _on_body_entered(body):
 	if body != player:
 		return
-
+	
+	pbg.modifica(true)
 	_set_player_camera(false)
 	area_camera.enabled = true
 
@@ -25,6 +27,7 @@ func _on_body_exited(body):
 	if body != player:
 		return
 
+	pbg.modifica(false)
 	area_camera.enabled = false
 	_set_player_camera(true)
 

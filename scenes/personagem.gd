@@ -128,6 +128,15 @@ func get_input():
 		parry_time_left = parry_duration
 		return
 
+	if Input.is_action_just_pressed("up") and is_on_floor() and (do_action(State.JUMP) or do_action(State.FRONTJUMP)): #pulo
+		if state == State.SLIDE and not can_exit_slide():
+			return
+		if state == State.RUN or state == State.SLIDE:
+			state = State.FRONTJUMP
+		else:
+			state = State.JUMP
+		velocity.y = jump_speed
+
 	if state == State.PARRY:
 		return
 	
@@ -142,15 +151,6 @@ func get_input():
 	if Input.is_action_pressed("down") and state == State.RUN:
 		state = State.SLIDE
 		turn_lock_time = 0.3
-
-	if Input.is_action_just_pressed("up") and is_on_floor() and (do_action(State.JUMP) or do_action(State.FRONTJUMP)): #pulo
-		if state == State.SLIDE and not can_exit_slide():
-			return
-		if state == State.RUN or state == State.SLIDE:
-			state = State.FRONTJUMP
-		else:
-			state = State.JUMP
-		velocity.y = jump_speed
 
 
 func update_state(input_direction, delta):

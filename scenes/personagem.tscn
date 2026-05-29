@@ -493,7 +493,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Parry",
-"speed": 12.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -642,7 +642,9 @@ script = ExtResource("1_7k68m")
 [node name="mc_Sprites" type="AnimatedSprite2D" parent="." unique_id=1439858816]
 position = Vector2(4, -1)
 sprite_frames = SubResource("SpriteFrames_guoat")
-animation = &"Hurt"
+animation = &"Parry"
+frame = 3
+frame_progress = 1.0
 script = ExtResource("14_4rabl")
 
 [node name="mc_SFX" type="AudioStreamPlayer2D" parent="." unique_id=419064344]

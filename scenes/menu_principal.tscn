@@ -69,11 +69,21 @@ offset_left = 7.0
 offset_top = 14.0
 offset_right = 949.0
 offset_bottom = 453.0
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tristique turpis quis tincidunt convallis. In id nibh mauris. In dignissim dui at aliquam vehicula. In ornare purus a libero iaculis aliquam. Proin tempor, lectus vel mollis ultrices, lorem justo facilisis erat, vel mattis metus erat sit amet nisl. Morbi sit amet mattis dui. Praesent eu massa vitae orci tincidunt fringilla sed at orci. In porta tincidunt nulla quis tempor. Integer a viverra eros. Aliquam faucibus, ligula id accumsan blandit, urna purus interdum libero, vitae consequat nisl nulla non elit. Phasellus quis venenatis orci.
+text = "Controles:
+> Setas - Movimentação do personagem
+>> Cima - Pular
+>Shift - Segurar para correr
+>> (Enquanto corre) Trás - Freio, é usado para recarregar energia acumulada
+>> (Enquanto corre) Baixo - Slide
+>> (Enquanto corre) Cima - Pulo em arco
+>>> Pulo em arco na parede dá um wallgrab, do wallgrab é possível dar um pulo na direção contrária
+> Z - Parry 
 
-Donec a turpis arcu. Donec elementum eleifend nibh ac auctor. Cras bibendum mattis orci quis interdum. Donec tincidunt risus at mauris consequat, quis feugiat risus lacinia. Morbi eget arcu at tortor bibendum auctor a eu ligula. Quisque tincidunt et lectus id tempor. Vivamus nec interdum dolor. Pellentesque rutrum dignissim justo, sed ultrices tellus imperdiet mollis. Duis vitae nisi in lorem consequat imperdiet.
-
-Praesent egestas nisl commodo sem condimentum tristique et eu ligula. Donec fermentum porttitor justo, sed vehicula tortor consectetur nec. Fusce gravida ipsum in elit elementum, id eleifend massa molestie. Cras vel purus mauris. Integer vel sapien eleifend dolor aliquet sagittis. Vivamus sit amet iaculis enim. Quisque aliquam, nisi vel facilisis euismod, nibh ex molestie mi, ut dictum turpis erat eu velit. Aenean bibendum finibus est, ac euismod odio scelerisque non. Aliquam dapibus euismod dignissim. Proin felis felis, volutpat nec elit dictum, rutrum malesuada justo. Pellentesque lacus ante, interdum quis nunc nec, consectetur auctor nulla."
+Energia:
+É utilizada para as principais ações, Parry e Pular (exceto Walljumps).
+Você acumula recarga ao se movimentar, e você recupera energia ao intencionalmente freiar durante uma corrida.
+Um parry com sucesso não gasta energia.
+Ao levar dano você perde energia, se perder toda a energia você é derrotado."
 autowrap_mode = 1
 
 [node name="Creditos" type="Button" parent="CanvasLayer" unique_id=1379662952]

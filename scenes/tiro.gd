@@ -6,6 +6,7 @@ extends Area2D
 var speed = 150
 @export var x = 1
 @export var y = null
+var player_position: Vector2
 
 signal hitplayer
 signal hitparry
@@ -20,9 +21,8 @@ func _ready():
 func _physics_process(delta):
 	if has_collided:
 		return
-	if y != null:
-		# Keep diagonal speed constant regardless of x/y values.
-		var direction := Vector2(x, float(y)).normalized()
+	if player_position != null:
+		var direction = (player_position - global_position).normalized()
 		position += direction * speed * delta
 	else:
 		position += Vector2(x, 0) * speed * delta

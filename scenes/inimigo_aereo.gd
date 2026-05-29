@@ -89,6 +89,7 @@ func shoot():
 	var t = tiro.instantiate()
 	t.x = face
 	t.y = 1
+	t.player_position = player.position
 	t.global_position = global_position
 	get_tree().current_scene.add_child(t)
 	t.physics.disabled = true

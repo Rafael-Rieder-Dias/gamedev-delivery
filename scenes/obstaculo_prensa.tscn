@@ -72,6 +72,7 @@ size = Vector2(64, 67)
 size = Vector2(57, 21)
 
 [node name="Prensa" type="StaticBody2D" unique_id=904824038]
+z_index = -1
 script = ExtResource("1_i02oa")
 
 [node name="p_GFX" type="AnimatedSprite2D" parent="." unique_id=272797883]

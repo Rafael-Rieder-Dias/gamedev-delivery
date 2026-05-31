@@ -233,7 +233,7 @@ func update_state(input_direction, delta):
 		state = State.IDLE
 		return
 
-	if abs(velocity.x) > 300:
+	if abs(velocity.x) > 230:
 		state = State.RUN
 	else:
 		state = State.WALK
@@ -250,8 +250,8 @@ func update_movement(input_direction, delta):
 		target_speed = run_speed
 	
 	if state == State.DEATH:
-		velocity.x = 0
-		velocity.y = 0
+		velocity.x = move_toward(velocity.x,0,delta)
+		velocity.y = move_toward(velocity.y,0,delta)
 		return
 		
 	if state == State.HURT:
@@ -339,6 +339,7 @@ func update_collision():
 		caixaagch.disabled = true
 
 func update_camera(): #FEITO COM IA ---- REVISAR
+
 	var base = 80 if face == FACE.Right else -80
 	var look = velocity.x * 0.2
 	

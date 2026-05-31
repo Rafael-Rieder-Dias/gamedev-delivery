@@ -7,6 +7,9 @@
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_wur0a"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dp01m"]
+distance = -354.0
+
 [node name="Debug" type="Node2D" unique_id=1087216480]
 script = ExtResource("1_ddwwg")
 
@@ -44,3 +47,8 @@ offset_bottom = 33.0
 horizontal_alignment = 2
 
 [node name="Debug_Area" parent="." unique_id=1029699458 instance=ExtResource("4_dp01m")]
+
+[node name="Mundo" type="Area2D" parent="." unique_id=1819765402]
+
+[node name="Mundo_Limite" type="CollisionShape2D" parent="Mundo" unique_id=960899178]
+shape = SubResource("WorldBoundaryShape2D_dp01m")

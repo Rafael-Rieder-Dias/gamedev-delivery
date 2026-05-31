@@ -10,6 +10,9 @@ extends Node2D
 @onready var creditospainel = $CanvasLayer/Creditos/Painel
 @onready var creditospainelfec = $CanvasLayer/Creditos/Painel/Fechar
 
+@onready var debug2 = $CanvasLayer/debug2
+@onready var debug3 = $CanvasLayer/debug3
+
 func _ready() -> void:
 	ajudapainel.visible = false
 	creditospainel.visible = false
@@ -30,7 +33,11 @@ func _process(_delta) -> void:
 		ajudapainel.visible = true
 		pass
 	if comecar.button_pressed:
+		get_tree().change_scene_to_file("res://scenes/fase_1.tscn")
+	if debug2.button_pressed:
 		get_tree().change_scene_to_file("res://scenes/teste.tscn")
+	if debug3.button_pressed:
+		get_tree().change_scene_to_file("res://scenes/teste_rafa.tscn")
 	if sair.button_pressed:
 		get_tree().quit()
 	pass

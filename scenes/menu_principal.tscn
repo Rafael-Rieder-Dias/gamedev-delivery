@@ -32,13 +32,6 @@ offset_right = 628.0
 offset_bottom = 492.0
 text = "Sair"
 
-[node name="RafaTeste" type="Button" parent="CanvasLayer" unique_id=63903850]
-offset_left = 547.0
-offset_top = 530.0
-offset_right = 927.0
-offset_bottom = 574.0
-text = "RafaTeste"
-
 [node name="ComoJogar" type="Button" parent="CanvasLayer" unique_id=818452086]
 offset_left = 502.0
 offset_top = 394.0
@@ -122,3 +115,17 @@ text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tris
 Donec a turpis arcu. Donec elementum eleifend nibh ac auctor. Cras bibendum mattis orci quis interdum. Donec tincidunt risus at mauris consequat, quis feugiat risus lacinia. Morbi eget arcu at tortor bibendum auctor a eu ligula. Quisque tincidunt et lectus id tempor. Vivamus nec interdum dolor. Pellentesque rutrum dignissim justo, sed ultrices tellus imperdiet mollis. Duis vitae nisi in lorem consequat imperdiet.
 "
 autowrap_mode = 1
+
+[node name="debug2" type="Button" parent="CanvasLayer" unique_id=63903850]
+offset_left = 2.0
+offset_top = 540.0
+offset_right = 138.0
+offset_bottom = 581.0
+text = "debug1"
+
+[node name="debug3" type="Button" parent="CanvasLayer" unique_id=1498999279]
+offset_left = -1.0
+offset_top = 592.0
+offset_right = 135.0
+offset_bottom = 633.0
+text = "debug2"

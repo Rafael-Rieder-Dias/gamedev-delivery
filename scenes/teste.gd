@@ -16,8 +16,7 @@ func _ready():
 	death_sfx.loop = false
 
 func _process(_delta):
-	debug_label.text = "LIFES: %s\nBGM: %s\nSTATE: %s\nSFX: %s\nVELY: %s\nVELX: %s\nSTORE.VELX: %s\nRUN: %s" % [
-		get_tree().lifes,
+	debug_label.text = "BGM: %s\nSTATE: %s\nSFX: %s\nVELY: %s\nVELX: %s\nSTORE.VELX: %s\nRUN: %s" % [
 		get_bgm_name(area1),
 		get_state_name(),
 		get_sfx_name(),
@@ -54,6 +53,11 @@ func get_bgm_name(variavel):
 	if stream == null:
 		return "NONE"
 	return stream.resource_path.get_file()
+
+func _on_world_boundary_body_entered(body: Node) -> void:
+	if body != player:
+		return
+	player._on_hitkill()
 
 func on_player_death():
 	print("teste")

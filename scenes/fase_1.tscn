@@ -1105,8 +1105,7 @@ sources/4 = SubResource("TileSetScenesCollectionSource_mok7k")
 normal = Vector2(-0.0016488023, -0.99999857)
 distance = -648.00903
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbhx4"]
-size = Vector2(121, 107)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfxju"]
 
 [node name="Fase1" type="Node2D" unique_id=765145887]
 script = ExtResource("1_m44rk")
@@ -1146,6 +1145,33 @@ position = Vector2(91, 477)
 
 [node name="Control" parent="Controle" unique_id=1820077817 instance=ExtResource("3_clhhq")]
 
+[node name="LabelVitoria" type="Label" parent="Controle/Control" unique_id=1075455047]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -11.5
+offset_right = 58.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Fase completa!"
+
+[node name="Fade" type="ColorRect" parent="Controle/Control" unique_id=1968685585]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="TileMaps" type="TileMapLayer" parent="." unique_id=930509102]
 z_index = 1
 position = Vector2(1, 68)
@@ -1162,6 +1188,8 @@ shape = SubResource("WorldBoundaryShape2D_m44rk")
 [node name="Vitoria" type="Area2D" parent="." unique_id=609335189]
 position = Vector2(2283, 451)
 
-[node name="Vitoria_Area" type="CollisionShape2D" parent="Vitoria" unique_id=414656061]
+[node name="Vitoria_Area" type="Area2D" parent="Vitoria" unique_id=1013935535]
 position = Vector2(50.5, 18.5)
-shape = SubResource("RectangleShape2D_fbhx4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vitoria/Vitoria_Area" unique_id=46861263]
+shape = SubResource("RectangleShape2D_gfxju")

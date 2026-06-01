@@ -52,7 +52,7 @@ func behaviorize(delta):
 				shoot()
 			if state_frames >= 20:
 				state = State.IDLE
-				attack_loop = 40
+				attack_loop = 80
 				state_changed = true
 			#bullet behavior
 

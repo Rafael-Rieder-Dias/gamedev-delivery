@@ -1,7 +1,7 @@
 class_name Personagem
 extends CharacterBody2D
 
-@export var walk_speed := 100 #velocidade máxima de caminhada
+@export var walk_speed := 150 #velocidade máxima de caminhada
 @export var run_speed := 600 #velocidade máxima de corrida
 @export var acceleration := 200.0 #aceleração -- mudar para valor herdado?
 @export var ground_friction := 400.0 #fricção de movimento -- mudar para valor herdado?

@@ -250,8 +250,8 @@ func update_movement(input_direction, delta):
 		target_speed = run_speed
 	
 	if state == State.DEATH:
-		velocity.x = move_toward(velocity.x,0,delta)
-		velocity.y = move_toward(velocity.y,0,delta)
+		velocity.x = move_toward(velocity.x,0,500 * delta)
+		velocity.y = move_toward(velocity.y,0,500 * delta)
 		return
 		
 	if state == State.HURT:

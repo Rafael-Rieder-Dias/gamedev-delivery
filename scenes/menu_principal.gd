@@ -33,7 +33,7 @@ func _process(_delta) -> void:
 		ajudapainel.visible = true
 		pass
 	if comecar.button_pressed:
-		get_tree().change_scene_to_file("res://scenes/fase_1.tscn")
+		get_tree().change_scene_to_file("res://scenes/tutorial_1.tscn")
 	if debug2.button_pressed:
 		get_tree().change_scene_to_file("res://scenes/teste.tscn")
 	if debug3.button_pressed:

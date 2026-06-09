@@ -139,9 +139,16 @@ func get_input():
 			state = State.JUMP
 		velocity.y = jump_speed
 
-	if Input.is_action_pressed("a_button"): #gatilho de corrida
-		wants_run = true
-	else: wants_run = false
+	wants_run = Input.is_action_pressed("a_button")
+	if wants_run:
+		var boost_dir = 1 if face == FACE.Right else -1
+		if Input.is_action_just_pressed("up") and is_on_floor():
+			velocity.x = boost_dir * min(abs(velocity.x) + 400, 600)
+			velocity.y = jump_speed
+		if Input.is_action_just_pressed("down") and is_on_floor():
+			velocity.x = boost_dir * min(abs(velocity.x) + 200, 600)
+			state = State.SLIDE
+
 
 	if state == State.PARRY:
 		return

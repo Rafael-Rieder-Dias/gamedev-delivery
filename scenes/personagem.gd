@@ -146,7 +146,7 @@ func get_input():
 			velocity.x = boost_dir * min(abs(velocity.x) + 400, 600)
 			velocity.y = jump_speed
 		if Input.is_action_just_pressed("down") and is_on_floor():
-			velocity.x = boost_dir * min(abs(velocity.x) + 200, 600)
+			velocity.x = boost_dir * min(abs(velocity.x) + 100, 600)
 			state = State.SLIDE
 
 
@@ -347,8 +347,8 @@ func update_collision():
 
 func update_camera(): #FEITO COM IA ---- REVISAR
 
-	var base = 80 if face == FACE.Right else -80
-	var look = velocity.x * 0.2
+	var base = 20 if face == FACE.Right else -20
+	var look = velocity.x * 0.1
 	
 	var target = base + look
 	
@@ -356,23 +356,28 @@ func update_camera(): #FEITO COM IA ---- REVISAR
 		camera.offset.x = lerp(camera.offset.x, target, 0.1)
 		
 func update_energy(delta):
+	if state == State.IDLE and energy < 100 and recharge > 0:
+		var transfer = min(recharge, 1 * delta)
+		energy += transfer
+		recharge -= transfer
+	elif recharge < 20:
+		recharge = move_toward(recharge, 20, 0.5 * delta)
+	
 	if energy > 100: #lidar com over-charge (é uma mecânica)
 		energy = move_toward(energy, 100, 3 * delta)
-	
+		
 	if state == State.SKID and state_frames == 0: #recarregar energia
 		energy += int(recharge)
 		recharge = 0
 		return
 
 	if abs(velocity.x) > walk_speed: #Talvez mudar a formúla de decay
-		if recharge < 10:
+		if recharge < 20:
+			recharge = move_toward(recharge, 100, 5 * delta)
+		elif recharge < 50:
 			recharge = move_toward(recharge, 100, 3 * delta)
-		elif recharge < 30:
-			recharge = move_toward(recharge, 100, 2 * delta)
 		else:
-			recharge = move_toward(recharge, 100, 1.5 * delta)
-	elif state != State.WALLGRAB:
-		recharge = move_toward(recharge, 0, 5 * delta)
+			recharge = move_toward(recharge, 100, 2 * delta)
 
 func do_wall_jump(): #FEITO POR IA ---- REVISAR
 	var wall_dir = get_wall_normal().x

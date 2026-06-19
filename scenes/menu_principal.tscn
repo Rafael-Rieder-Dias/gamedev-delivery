@@ -110,11 +110,19 @@ offset_left = 100.0
 offset_top = 42.0
 offset_right = 764.0
 offset_bottom = 403.0
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tristique turpis quis tincidunt convallis. In id nibh mauris. In dignissim dui at aliquam vehicula. In ornare purus a libero iaculis aliquam. Proin tempor, lectus vel mollis ultrices, lorem justo facilisis erat, vel mattis metus erat sit amet nisl. Morbi sit amet mattis dui. Praesent eu massa vitae orci tincidunt fringilla sed at orci. In porta tincidunt nulla quis tempor. Integer a viverra eros. Aliquam faucibus, ligula id accumsan blandit, urna purus interdum libero, vitae consequat nisl nulla non elit. Phasellus quis venenatis orci.
+text = "Desenvolvedores:
+- Pedro A. Soares
+- Rafael R. Dias
+- Vitor Rafael G. B. Borges
 
-Donec a turpis arcu. Donec elementum eleifend nibh ac auctor. Cras bibendum mattis orci quis interdum. Donec tincidunt risus at mauris consequat, quis feugiat risus lacinia. Morbi eget arcu at tortor bibendum auctor a eu ligula. Quisque tincidunt et lectus id tempor. Vivamus nec interdum dolor. Pellentesque rutrum dignissim justo, sed ultrices tellus imperdiet mollis. Duis vitae nisi in lorem consequat imperdiet.
+Assets:
+- Pixel Art Sidescroller Asset Pack 32x32 Modern City by GandaIfHardcore
+- 2D Pixel Art Character Template Asset Pack © 2023 by Hayden Zegley is licensed under CC BY 4.0
+- Free Industrial Zone Tileset by Craftpix
+- 'Sunnyland' assets by Ansimuz
+and more.
 "
-autowrap_mode = 1
+autowrap_mode = 3
 
 [node name="debug2" type="Button" parent="CanvasLayer" unique_id=63903850]
 offset_left = 2.0

@@ -145,7 +145,7 @@ func get_input():
 		if Input.is_action_just_pressed("up") and is_on_floor():
 			velocity.x = boost_dir * min(abs(velocity.x) + 400, 600)
 			velocity.y = jump_speed
-		if Input.is_action_just_pressed("down") and is_on_floor():
+		if Input.is_action_just_pressed("down") and is_on_floor() and state != State.SLIDE:
 			velocity.x = boost_dir * min(abs(velocity.x) + 100, 600)
 			state = State.SLIDE
 

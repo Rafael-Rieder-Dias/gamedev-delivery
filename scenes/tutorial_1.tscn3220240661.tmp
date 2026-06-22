@@ -1113,7 +1113,7 @@ distance = -648.00903
 size = Vector2(69, 73)
 
 [sub_resource type="LabelSettings" id="LabelSettings_jeb6x"]
-font_size = 13
+font_size = 10
 
 [node name="tutorial_1" type="Node2D" unique_id=835885231]
 script = ExtResource("1_7i1m6")
@@ -1213,12 +1213,15 @@ shape = SubResource("RectangleShape2D_p2agg")
 [node name="Controle" type="CanvasLayer" parent="." unique_id=878672241]
 
 [node name="Tutorial" type="Control" parent="Controle" unique_id=540041511]
-visible = false
 layout_mode = 3
-anchor_left = 0.34461805
-anchor_top = 0.48765427
-anchor_right = 0.5182292
-anchor_bottom = 0.69135803
+anchor_left = 0.42600003
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.59900004
+offset_left = -23.752045
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = -0.15203857
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -1232,9 +1235,9 @@ anchor_top = 0.30400002
 anchor_right = 1.248
 anchor_bottom = 0.69600004
 offset_left = -0.051002502
-offset_top = -14.536005
+offset_top = -0.017999649
 offset_right = 0.0079956055
-offset_bottom = 15.5359955
+offset_bottom = 0.017993927
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -1245,17 +1248,17 @@ anchor_left = 0.012
 anchor_right = 0.98800004
 anchor_bottom = 1.0
 offset_left = 0.7160076
-offset_top = 4.000004
+offset_top = -2.5180016
 offset_right = -0.008003235
-offset_bottom = -6.4819946
+offset_bottom = 13.518002
 grow_horizontal = 2
 grow_vertical = 2
+text = "WASD - MOVER
+SHIFT - CORRER"
 label_settings = SubResource("LabelSettings_jeb6x")
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Control" parent="Controle" unique_id=1820077817 instance=ExtResource("3_3pi4i")]
-visible = false
 offset_left = 6.0
 offset_top = -4.0
 offset_right = 6.0

@@ -11,7 +11,7 @@ region = Rect2(98.5, 0, 91, 21)
 size = Vector2(58, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u04ea"]
-size = Vector2(58, 8)
+size = Vector2(58, 1)
 
 [node name="PlatCai" type="StaticBody2D" unique_id=651093559]
 script = ExtResource("1_u04ea")
@@ -32,7 +32,7 @@ one_way_collision_margin = 6.3
 [node name="PlatC_AREA" type="Area2D" parent="." unique_id=1959733196]
 
 [node name="PlatC_AREA_PHY" type="CollisionShape2D" parent="PlatC_AREA" unique_id=1376991208]
-position = Vector2(0, -14)
+position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_u04ea")
 
 [connection signal="body_entered" from="PlatC_AREA" to="." method="_on_plat_c_area_body_entered"]

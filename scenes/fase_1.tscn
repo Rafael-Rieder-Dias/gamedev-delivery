@@ -1158,7 +1158,7 @@ texture = ExtResource("13_tqwrg")
 enabled = false
 
 [node name="Personagem" parent="." unique_id=410211333 instance=ExtResource("1_o5tko")]
-position = Vector2(172, 485)
+position = Vector2(1279, 283)
 gravity = 2000.0
 
 [node name="TileMaps" type="TileMapLayer" parent="." unique_id=930509102]

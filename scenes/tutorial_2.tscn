@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://c1phvurmepuxy" path="res://GraphicsAssets/Tiles/Objects/Pointer1.png" id="11_ryn22"]
 [ext_resource type="Texture2D" uid="uid://bjdfi4n07kije" path="res://GraphicsAssets/Tiles/Objects/Pointer2.png" id="12_j2i6x"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_ryn22"]
+font_size = 13
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7gbks"]
 resource_name = "terreno"
 texture = ExtResource("3_iudek")
@@ -1123,18 +1126,6 @@ collision_priority = 2.0
 [node name="Control" parent="Controle" unique_id=1820077817 instance=ExtResource("2_4w7fl")]
 metadata/_edit_use_anchors_ = true
 
-[node name="Tutorial_Panel" type="Panel" parent="Controle/Control" unique_id=25004805]
-layout_mode = 0
-offset_left = 3.0
-offset_top = -3.0
-offset_right = 43.0
-offset_bottom = 37.0
-
-[node name="Tutorial_Text" type="Label" parent="Controle/Control/Tutorial_Panel" unique_id=461096018]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="LabelVitoria" type="Label" parent="Controle/Control" unique_id=550586684]
 visible = false
 layout_mode = 1
@@ -1161,6 +1152,48 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.52316207, 0.5231626, 0.52316207, 1)
+
+[node name="Tutorial" type="Control" parent="Controle/Control" unique_id=119751490]
+layout_mode = 1
+anchor_left = 0.34461805
+anchor_top = 0.48765427
+anchor_right = 0.5182292
+anchor_bottom = 0.69135803
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Tutorial_Panel" type="Panel" parent="Controle/Control/Tutorial" unique_id=1695924908]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.41900003
+anchor_top = -0.12900001
+anchor_right = 1.248
+anchor_bottom = 1.0450001
+offset_left = -0.051002502
+offset_top = 0.028036118
+offset_right = 0.0079956055
+offset_bottom = 0.0599823
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tutorial_Text" type="Label" parent="Controle/Control/Tutorial/Tutorial_Panel" unique_id=3948734]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.012
+anchor_right = 0.98800004
+anchor_bottom = 1.0
+offset_left = 0.7160076
+offset_top = 4.000004
+offset_right = -0.008003235
+offset_bottom = -6.4819946
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_ryn22")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="CameraGenerica" type="Camera2D" parent="." unique_id=18294825]
 enabled = false

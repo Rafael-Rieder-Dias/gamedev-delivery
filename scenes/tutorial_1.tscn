@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cok1t53tpafqg" path="res://scenes/tutorial_1.gd" id="1_7i1m6"]
 [ext_resource type="PackedScene" uid="uid://d2p5bv3trdc4s" path="res://scenes/personagem.tscn" id="2_ox87s"]
 [ext_resource type="PackedScene" uid="uid://dbtoq7cpi3lva" path="res://scenes/interface.tscn" id="3_3pi4i"]
-[ext_resource type="Texture2D" path="res://GraphicsAssets/Tiles/simplepassthrough.png" id="4_s0ky3"]
+[ext_resource type="Texture2D" uid="uid://dyywx2sptpoww" path="res://GraphicsAssets/Tiles/Objects/simplepassthrough.png" id="4_s0ky3"]
 [ext_resource type="Texture2D" uid="uid://fvuxcyo53ylh" path="res://GraphicsAssets/Tiles/City Tiles/GandalfHardcore city tiles 32x32.png" id="5_jeb6x"]
 [ext_resource type="Texture2D" uid="uid://eg1m7s0tlriv" path="res://GraphicsAssets/Tiles/City Tiles/Building Tiles 32x32.png" id="6_witef"]
 [ext_resource type="PackedScene" uid="uid://8ct6f1nuvokd" path="res://scenes/inimigo_estatico.tscn" id="7_4xio7"]
@@ -1213,7 +1213,6 @@ shape = SubResource("RectangleShape2D_p2agg")
 [node name="Controle" type="CanvasLayer" parent="." unique_id=878672241]
 
 [node name="Tutorial" type="Control" parent="Controle" unique_id=540041511]
-visible = false
 layout_mode = 3
 anchor_left = 0.34461805
 anchor_top = 0.48765427

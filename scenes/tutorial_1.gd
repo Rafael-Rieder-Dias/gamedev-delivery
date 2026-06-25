@@ -9,6 +9,9 @@ extends Node2D
 @onready var vitoria_area = $Vitoria/Vitoria_Area
 @onready var label_vitoria = $Controle/Control/LabelVitoria
 @onready var fade = $Controle/Control/Fade
+@onready var tutorial_panel = $Controle/Tutorial/Tutorial_Panel
+@onready var tutorial_text = $Controle/Tutorial/Tutorial_Panel/Tutorial_Text
+@onready var tilemaps = $TileMaps
 
 func _ready() -> void:
 	world_boundary.body_entered.connect(_on_world_boundary_body_entered)
@@ -16,6 +19,12 @@ func _ready() -> void:
 	vitoria_area.body_entered.connect(_on_vitoria_area_body_entered)
 	label_vitoria.visible = false
 	fade.visible = false
+	tutorial_panel.visible = false
+
+	for placa in tilemaps.get_children():
+		if placa is Area2D:
+			placa.body_entered.connect(_on_placa_entered.bind(placa))
+			placa.body_exited.connect(_on_placa_exited.bind(placa))
 
 func _process(_delta: float) -> void:
 	pass
@@ -48,3 +57,27 @@ func _on_player_death() -> void:
 	musica.play()
 	await get_tree().create_timer(2).timeout
 	get_tree().reload_current_scene()
+	
+func _on_placa_entered(body: Node, placa: Area2D) -> void:
+	if body != player:
+		return
+	
+	tutorial_panel.visible = true
+
+	match placa.name:
+		"Placa_Info1":
+			tutorial_text.text = "ESQUERDA E DIREITA\n Mover"
+
+		"Placa_Info2":
+			tutorial_text.text = "CIMA - Pular"
+
+		"Placa_Info3":
+			tutorial_text.text = "SHIFT (segurar) - CORRER\n SHIFT + W - Pulo frontal"
+
+		"Placa_Info4":
+			tutorial_text.text = "SHIFT + BAIXO - Slide."
+
+func _on_placa_exited(body: Node, placa: Area2D) -> void:
+	if body != player:
+		return
+	tutorial_panel.visible = false

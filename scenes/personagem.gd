@@ -335,7 +335,7 @@ func update_face(_input_direction):
 func update_collision():
 	if state == State.DEATH:
 		caixape.disabled = true
-		caixaagch.disabled = false
+		caixaagch.disabled = true
 		caixaprry.disabled = true	
 
 	elif state == State.SLIDE:

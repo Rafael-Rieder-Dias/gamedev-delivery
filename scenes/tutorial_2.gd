@@ -68,6 +68,12 @@ func _on_placa_entered(body: Node, placa: Area2D) -> void:
 		"Placa_Info1":
 			tutorial_text.text = "Ao fazer um pulo frontal e entrar em contato com uma parede o personagem irá se agarrar à parede e pode fazer um WallJump ao apertar CIMA"
 
+		"Placa_Info2":
+			tutorial_text.text = "As barras no canto inferior esquerdo simbolizam a energia (barra verde) e a recarga (barra amarela) do personagem."
+			
+		"Placa_Info3":
+			tutorial_text.text = "Ações como pular ou dar um parry gastam energia.\n A energia pode ser recuperada ao dar uma freiada brusca, ou ao ficar parado por um tempo."
+
 		"Placa_Perigo":
 			tutorial_text.text = "Z - Parry"
 

@@ -16,6 +16,8 @@ enum State {
 @export var tiro : PackedScene
 @export var face = -1
 
+@export var gravity := 2500.0 #gravidade
+
 var state := State.IDLE
 var state_frames := 0
 var state_changed := false
@@ -30,6 +32,7 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	move_and_slide()
 	behaviorize(delta)
 	animate(delta)
 	soundize()
@@ -40,6 +43,8 @@ func _physics_process(delta):
 	pass
 	
 func behaviorize(delta):
+	if not is_on_floor(): 
+		velocity.y += gravity
 	match state:
 		State.IDLE:
 			attack_loop -= delta

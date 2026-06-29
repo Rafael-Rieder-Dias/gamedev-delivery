@@ -143,10 +143,10 @@ func get_input():
 	if wants_run:
 		var boost_dir = 1 if face == FACE.Right else -1
 		if Input.is_action_just_pressed("up") and is_on_floor():
-			velocity.x = boost_dir * min(abs(velocity.x) + 400, 600)
+			velocity.x = boost_dir * min(abs(velocity.x) + 400, run_speed)
 			velocity.y = jump_speed
 		if Input.is_action_just_pressed("down") and is_on_floor() and state != State.SLIDE:
-			velocity.x = boost_dir * min(abs(velocity.x) + 100, 600)
+			velocity.x = boost_dir * min(abs(velocity.x) + 100, run_speed)
 			state = State.SLIDE
 
 
@@ -202,7 +202,7 @@ func update_state(input_direction, delta):
 			if can_exit_slide():
 				state = State.IDLE
 			else:
-				velocity.x = 50
+				velocity.x = 50 * (1 if face == FACE.Right else -1)
 			return
 		return
 	
@@ -240,7 +240,7 @@ func update_state(input_direction, delta):
 		state = State.IDLE
 		return
 
-	if abs(velocity.x) > 230:
+	if abs(velocity.x) > run_speed/2:
 		state = State.RUN
 	else:
 		state = State.WALK

@@ -75,7 +75,7 @@ func _on_placa_entered(body: Node, placa: Area2D) -> void:
 			tutorial_text.text = "Ações como pular ou dar um parry gastam energia.\n A energia pode ser recuperada ao dar uma freiada brusca, ou ao ficar parado por um tempo."
 
 		"Placa_Perigo":
-			tutorial_text.text = "Z - Parry"
+			tutorial_text.text = "Z - Parry\nO parry serve para neutralizar projéteis vindo de inimigos.\n Ao errar um parry você gasta energia, mas não gasta energia ao acertar um parry."
 
 func _on_placa_exited(body: Node, placa: Area2D) -> void:
 	if body != player:

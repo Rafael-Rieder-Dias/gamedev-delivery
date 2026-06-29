@@ -459,7 +459,7 @@ func _on_bullet_hitplayer():
 		death_time_left = 0.0
 	
 func _on_bullet_hitparry():
-	energy += 10
+	energy += 15
 	sfx.secondize(Second.PARRYHIT)
 	
 func _on_hitkill():
